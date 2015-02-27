@@ -1,0 +1,21 @@
+MDP Monitor Installation:
+
+Windows:
+
+	1. Download and install the latest version of Python with a default installation (http://www.python.org/)
+
+	2. Unzip the file (e.g., mdp_monitor_1.1.zip) into whatever directory you'd like (e.g. C:\MDP)
+
+	3. Open Notepad, and write:
+
+		C:\Python34\python.exe "C:\MDP\monitorapp.py" 
+	
+	(change Python34 to whatever the correct version is, and C:\MDP\ to where you unzipped the file), save the file as "runmonitor.bat", including the quotations. You can now double-click this file and the program will run (note you can place this file anywhere on your computer--for example, your desktop)
+
+Mac / Linux:
+
+	1. Download and install the latest version of Python with a default installation (http://www.python.org/)
+
+	2. Unzip the file (e.g., mdp_monitor_1.1.zip) into whatever directory you'd like (e.g. C:\MDP)
+
+	3. Double-click on monitorapp.py to run the program. (If this doesn't work, please let us know)
