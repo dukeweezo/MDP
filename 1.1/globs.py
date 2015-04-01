@@ -1,7 +1,11 @@
 # MDP Idyllwild Incident Monitor App
 
-'''Globals! Ack! (however, relatively safe, being as they're never changed
-without set_monitor_finished)
+'''Safe globals that are only changed with appropriate function, accessed without functions; specifically, 
+monitor_finished is used as convenience to indicate whether the monitor has been stopped. 
+
+Also, crude semaphores to synchronize with the messenger.py queue, help making the output to the UI closely
+correspond to actual execution (currently monitoring "workers" in pool.py are on a single thread, but UI output 
+nonetheless gets out of sync without a queue)
 '''
 import threading
 

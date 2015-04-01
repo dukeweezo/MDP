@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 #!python3
-# MDP Idyllwild Incident Monitor App
+# MDP Incident Monitor App
 
-"""Mountain Disaster Preparedness [Idyllwild, CA] road incident monitoring app
+"""Mountain Disaster Preparedness road incident monitoring app.
+
+A few current features:
+  monitoring ("web scraping") of arbitrary # of websites using arbitrary # of keywords
+  UI in tkinter with text output indicating status of monitor
+  emailing to an address (currently only gmail) when a keyword is found
+  settings saved in "settings.txt", providing a non-technical, easily editable format
 
 Misc. code standards:
   max column: 119
@@ -11,6 +17,20 @@ Misc. code standards:
   constants are caps
   "globs" only modified in monitorapp (using appropriate function)
   "globs" accessed anywhere
+  
+Modules:
+  monitorapp.py: main loop, tkinter UI, methods for handling pool.py worker web-scraping events
+  pool.py: "thread" pool that manages workers (currently single-thread) for monitoring websites
+  messenger.py: queue to send status / keyword matches / &c. to UI from pool.py
+  globs.py: safe globals indicating state of monitoring (started, stopped) and semaphores to lock communication
+    with UI
+    
+Todo (3/15): 
+  more comments
+  general refactoring
+  fix UI text output character jumbling
+  alert when incident disappears
+  research different trigger handling instead of current hack
 
 """
 
