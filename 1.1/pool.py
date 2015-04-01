@@ -1,6 +1,7 @@
 # MDP Incident Monitor App
 
-"""Pool that managers "workers" to do web-scraping; workers currently single-threaded, but may be multi-thread in future. Communication with UI achieved by queue in messenger.py.
+"""Pool that managers "workers" to do web-scraping; workers currently single-threaded, but may be multi-thread in 
+future. Communication with UI achieved by queue in messenger.py.
 """
 
 import os
