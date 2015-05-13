@@ -6,15 +6,6 @@ Or, Mountain Disaster Preparedness road incident monitoring app
 - UI in tkinter with text output indicating status of monitor.
 - Emailing to an address (currently only gmail) when a keyword is found.
 - Settings saved in "settings.txt", providing a non-technical, easily editable format.
-
-### Misc. code standards:
-- Max column: 119.
-- Private class variables preceded with _.
-- Other private variables not distinguished.
-- Constants are caps.
-- "globs" only modified in monitorapp (using appropriate function).
-- "globs" accessed anywhere.
-- "if not globs.monitor_finished:" used in each non-GUI loop to keep responsiveness to exiting the program; the alternatives seem unnecessarily complicated.
       
 ### Modules:
 - monitorapp.py: main loop, tkinter UI, methods for handling pool.py worker web-scraping events.
@@ -24,3 +15,12 @@ Or, Mountain Disaster Preparedness road incident monitoring app
 
 ### Misc. notes:
 - The program is not perfectly defined MVC--model is pool.py; view is monitorapp.py; while controller is broken up between monitorapp.py, messenger.py. All the necessary communication between model <=> view is passed via a global (model <= view; whether user has stopped the program or not) and messenger.py (model => view; the results of the scraping).
+
+### Misc. code standards:
+- Max column: 119.
+- Private class variables preceded with _.
+- Other private variables not distinguished.
+- Constants are caps.
+- "globs" only modified in monitorapp (using appropriate function).
+- "globs" accessed anywhere.
+- "if not globs.monitor_finished:" used in each non-GUI loop to keep responsiveness to exiting the program; the alternatives seem unnecessarily complicated.
