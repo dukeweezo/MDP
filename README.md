@@ -1,7 +1,7 @@
 # MDP
 Or, Mountain Disaster Preparedness road incident monitoring app
 
-#### Important current features:
+### Important current features:
 - Monitoring ("web scraping") of arbitrary # of websites using arbitrary # of keywords.
 - UI in tkinter with text output indicating status of monitor.
 - Emailing to an address (currently only gmail) when a keyword is found.
