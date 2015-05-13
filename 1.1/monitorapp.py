@@ -5,32 +5,39 @@
 """Mountain Disaster Preparedness road incident monitoring app.
 
 A few current features:
-  monitoring ("web scraping") of arbitrary # of websites using arbitrary # of keywords
-  UI in tkinter with text output indicating status of monitor
-  emailing to an address (currently only gmail) when a keyword is found
-  settings saved in "settings.txt", providing a non-technical, easily editable format
+  Monitoring ("web scraping") of arbitrary # of websites using arbitrary # of keywords.
+  UI in tkinter with text output indicating status of monitor.
+  Emailing to an address (currently only gmail) when a keyword is found.
+  Settings saved in "settings.txt", providing a non-technical, easily editable format.
 
 Misc. code standards:
-  max column: 119
-  private class variables preceded with _
-  other private variables not distinguished
-  constants are caps
-  "globs" only modified in monitorapp (using appropriate function)
-  "globs" accessed anywhere
-  
+  Max column: 119.
+  Private class variables preceded with _.
+  Other private variables not distinguished.
+  Constants are caps.
+  "globs" only modified in monitorapp (using appropriate function).
+  "globs" accessed anywhere.
+  "if not globs.monitor_finished:" used in each non-GUI loop to keep responsiveness to exiting the program;
+    the alternatives seem unnecessarily complicated.
+      
 Modules:
-  monitorapp.py: main loop, tkinter UI, methods for handling pool.py worker web-scraping events
-  pool.py: "thread" pool that manages workers (currently single-thread) for monitoring websites
-  messenger.py: queue to send status / keyword matches / &c. to UI from pool.py
-  globs.py: safe globals indicating state of monitoring (started, stopped) and semaphores to lock communication
-    with UI
+  monitorapp.py: main loop, tkinter UI, methods for handling pool.py worker web-scraping events.
+  pool.py: "thread" pool that manages workers (currently single-thread) for monitoring websites.
+  messenger.py: queue to send status / keyword matches / &c. to UI from pool.py.
+  globs.py: safe globals indicating state of monitoring (started, stopped) and semaphores to lock communication with UI.
+
+Misc. notes:
+  The program is not perfectly separated MVC--model is pool.py; view is monitorapp.py; while controller is broken up
+    between monitorapp.py, messenger.py. All the necessary communication between model <-> view is passed via a global
+    (model <- view; whether user has stopped the program or not) and messenger.py (model -> view; the results of the
+    scraping).
     
 Todo (3/15): 
-  more comments
-  general refactoring
-  fix UI text output character jumbling
-  alert when incident disappears
-  research different trigger handling instead of current hack
+  More comments.
+  General refactoring.
+  Fix UI text output character jumbling.
+  Alert when incident disappears.
+  Research different trigger handling instead of current hack.
 
 """
 
