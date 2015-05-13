@@ -1,7 +1,7 @@
 # MDP
 Or, Mountain Disaster Preparedness road incident monitoring app
 
-#### A few current features:
+#### Important current features:
 - Monitoring ("web scraping") of arbitrary # of websites using arbitrary # of keywords.
 - UI in tkinter with text output indicating status of monitor.
 - Emailing to an address (currently only gmail) when a keyword is found.
@@ -23,4 +23,4 @@ Or, Mountain Disaster Preparedness road incident monitoring app
 - globs.py: safe globals indicating state of monitoring (started, stopped) and semaphores to lock communication with UI.
 
 ### Misc. notes:
-- The program is not perfectly separated MVC--model is pool.py; view is monitorapp.py; while controller is broken up between monitorapp.py, messenger.py. All the necessary communication between model <-> view is passed via a global (model <- view; whether user has stopped the program or not) and messenger.py (model -> view; the results of the scraping).
+- The program is not perfectly separated MVC--model is pool.py; view is monitorapp.py; while controller is broken up between monitorapp.py, messenger.py. All the necessary communication between model <=> view is passed via a global (model <= view; whether user has stopped the program or not) and messenger.py (model => view; the results of the scraping).
