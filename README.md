@@ -24,4 +24,4 @@ Or, Mountain Disaster Preparedness road incident monitoring app
 - "globs" only modified in monitorapp (using appropriate function).
 - "globs" accessed anywhere.
 - "if not globs.monitor_finished:" used in each non-GUI loop to keep responsiveness to exiting the program; the alternatives seem unnecessarily complicated.
-- - Comments of type pound symbol + -- + description to separate groups of functions (mostly in monitorapp.py).
+- Comments of type pound symbol + -- + description to separate groups of functions (mostly in monitorapp.py). Alternately could separate into different classes which is not worth the effort.
