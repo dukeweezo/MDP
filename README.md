@@ -6,7 +6,6 @@ Or, Mountain Disaster Preparedness road incident monitoring app
 - UI in tkinter with text output indicating status of monitor.
 - Emailing to an address (currently only gmail) when a keyword is found.
 - Settings saved in "settings.txt", providing a non-technical, easily editable format.
-- Comments of type pound symbol + -- + description to indicate groups of functions (mostly in monitorapp.py)
       
 ### Modules:
 - monitorapp.py: main loop, tkinter UI, methods for handling pool.py worker web-scraping events.
@@ -25,3 +24,4 @@ Or, Mountain Disaster Preparedness road incident monitoring app
 - "globs" only modified in monitorapp (using appropriate function).
 - "globs" accessed anywhere.
 - "if not globs.monitor_finished:" used in each non-GUI loop to keep responsiveness to exiting the program; the alternatives seem unnecessarily complicated.
+- - Comments of type pound symbol + -- + description to separate groups of functions (mostly in monitorapp.py).
